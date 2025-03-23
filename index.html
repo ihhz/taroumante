@@ -4,12 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تواصل معنا على واتساب</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
+        }
+    </style>
+
+    <!-- TikTok Pixel Code -->
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t;
+            var ttq = w[t] = w[t] || [];
+            ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"];
+            ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } };
+            for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+            ttq.load = function (e) {
+                var n = "https://analytics.tiktok.com/i18n/pixel/events.js";
+                ttq._i = ttq._i || {};
+                ttq._i[e] = [];
+                ttq._i[e]._u = n;
+                ttq._t = ttq._t || {};
+                ttq._t[e] = +new Date;
+                ttq._o = ttq._o || {};
+                ttq._o[e] = arguments;
+                var o = document.createElement("script");
+                o.type = "text/javascript", o.async = !0, o.src = n + "?sdkid=" + e + "&lib=" + t;
+                var a = document.getElementsByTagName("script")[0];
+                a.parentNode.insertBefore(o, a)
+            };
+            ttq.load('CVG7CMBC77UCA5GK0Q1G');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
+    <!-- End TikTok Pixel Code -->
+
+    <script>
+        setTimeout(function () {
+            window.location.href = "https://wa.me/212620342327";
+        }, 4000); // تحويل بعد 4 ثواني
+    </script>
 </head>
 <body>
-    <h2>مرحبا بك! 👋</h2>
-    <p>اضغط على الزر أدناه للتواصل معنا عبر واتساب:</p>
-    <a href="https://wa.me/212620342327" style="display: inline-block; padding: 10px 20px; background-color: #25D366; color: white; text-decoration: none; font-size: 18px; border-radius: 5px;">
-        تواصل عبر واتساب
-    </a>
+    <div class="container">
+        <h2>شكراً لزيارتك! 👋</h2>
+        <p>جارٍ تحويلك إلى واتساب، إذا لم يتم التحويل تلقائيًا، اضغط على الزر أدناه:</p>
+        <a class="whatsapp-btn" href="https://wa.me/YOUR_WHATSAPP_NUMBER">تواصل معنا عبر واتساب</a>
+    </div>
 </body>
 </html>
