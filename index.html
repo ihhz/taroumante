@@ -1,85 +1,150 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html dir="rtl" lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل معنا على واتساب</title>
+    <title>اختر طريقة التواصل المفضلة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- مكان إضافة أكواد تتبع المنصات الإعلانية -->
+    <!-- TikTok Pixel -->
+    <!-- Facebook Pixel -->
+    <!-- Google Ads -->
+    
     <style>
+        /* تصميم بسيط وأنيق */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+
+        .header-text {
             text-align: center;
-            background-color: #f4f4f4;
-            padding: 50px;
+            padding: 30px 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
         }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin: auto;
+
+        .buttons-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
         }
-        h2 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
+
         .whatsapp-btn {
-            display: inline-block;
-            padding: 15px 20px;
-            background-color: #25D366;
-            color: white;
+            background: #25D366;
+            color: white !important;
+            padding: 18px 45px;
+            border-radius: 30px;
             text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: 0.3s;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            width: 280px;
+            justify-content: center;
         }
-        .whatsapp-btn:hover {
-            background-color: #1ebe5d;
+
+        .website-btn {
+            background: #e74c3c;
+            color: white !important;
+            padding: 18px 45px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            width: 280px;
+            justify-content: center;
+        }
+
+        .buttons-container a:hover {
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
         }
     </style>
-
-    <!-- TikTok Pixel Code -->
-    <script>
-        !function (w, d, t) {
-            w.TiktokAnalyticsObject = t;
-            var ttq = w[t] = w[t] || [];
-            ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"];
-            ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } };
-            for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
-            ttq.load = function (e) {
-                var n = "https://analytics.tiktok.com/i18n/pixel/events.js";
-                ttq._i = ttq._i || {};
-                ttq._i[e] = [];
-                ttq._i[e]._u = n;
-                ttq._t = ttq._t || {};
-                ttq._t[e] = +new Date;
-                ttq._o = ttq._o || {};
-                ttq._o[e] = arguments;
-                var o = document.createElement("script");
-                o.type = "text/javascript", o.async = !0, o.src = n + "?sdkid=" + e + "&lib=" + t;
-                var a = document.getElementsByTagName("script")[0];
-                a.parentNode.insertBefore(o, a)
-            };
-            ttq.load('CVG7UP3C77UAGLEFRI70');
-            ttq.page();
-        }(window, document, 'ttq');
-    </script>
-    <!-- End TikTok Pixel Code -->
-
-    <script>
-        setTimeout(function () {
-            window.location.href = "https://wa.me/212620342327";
-        }, 4000000); // تحويل بعد 4 ثواني
-    </script>
 </head>
 <body>
-    <div class="container">
-        <h2>شكراً لزيارتك! 👋</h2>
-        <p>جارٍ تحويلك إلى واتساب، إذا لم يتم التحويل تلقائيًا، اضغط على الزر أدناه:</p>
-        <a class="whatsapp-btn" href="https://wa.me/620342327">تواصل معنا عبر واتساب</a>
+
+    <!-- النص القابل للتعديل -->
+    <div class="header-text" id="editableText">
+        <!-- يمكنك تعديل هذا النص مباشرة في الملف -->
+        <h2>باش نفهموا المشكل اللي عندك دخلي عندنا الوتساب باش تشرحي لنا مزيان</h2>
+        <p></p>
     </div>
-</body>
-</html>
+
+    <!-- الأزرار -->
+    <div class="buttons-container">
+        <a href="#" class="whatsapp-btn" onclick="handleWhatsAppRedirect()">
+            <i class="fab fa-whatsapp"></i>
+            تواصل عبر واتساب
+        </a>
+
+        <a href="https://www.taroumante.com" class="website-btn" target="_blank">
+            <i class="fas fa-store"></i>
+            زيارة المتجر
+        </a>
+    </div>
+
+    <!-- التذييل -->
+    <footer>
+        © 2024 جميع الحقوق محفوظة
+    </footer>
+
+    <!-- نظام إدارة أرقام واتساب -->
+    <script>
+    // إعدادات القابلة للتخصيص
+    const AGENT_VERSION = "v3.0";
+    const agents = [
+        { number: "212620342327", name: "الدعم الفني 1" },
+        { number: "212620342327", name: "الدعم المبيعات" },
+        { number: "212620342327", name: "دعم ما بعد البيع" },
+        { number: "212620342327", name: "دعم التوصيل" },
+        { number: "212620342327", name: "إدارة الشكاوى" },
+        { number: "212620342327", name: "الدعم الفني 2" }
+    ];
+
+    function handleWhatsAppRedirect() {
+        // تحديث نظام التخزين عند تغيير الإصدار
+        const storedData = localStorage.getItem('whatsappAgent');
+        let currentAgent = null;
+
+        if (storedData) {
+            const data = JSON.parse(storedData);
+            if (data.version === AGENT_VERSION) {
+                currentAgent = data.agent;
+            }
+        }
+
+        if (!currentAgent) {
+            currentAgent = agents[Math.floor(Math.random() * agents.length)];
+            localStorage.setItem('whatsappAgent', JSON.stringify({
+                version: AGENT_VERSION,
+                agent: currentAgent
+            }));
+        }
+
+        // فتح المحادثة مباشرة بدون أي رسالة مسبقة
+        window.open(`https://wa.me/${currentAgent.number}`, '_blank');
+    }
+</script>
