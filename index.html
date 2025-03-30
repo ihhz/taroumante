@@ -1,150 +1,207 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اختر طريقة التواصل المفضلة</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- مكان إضافة أكواد تتبع المنصات الإعلانية -->
-    <!-- TikTok Pixel -->
-    <!-- Facebook Pixel -->
-    <!-- Google Ads -->
-    
-    <style>
-        /* تصميم بسيط وأنيق */
-        body {
-            font-family: 'Tajawal', sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background: #fff;
-        }
-
-        .header-text {
-            text-align: center;
-            padding: 30px 20px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #eee;
-        }
-
-        .buttons-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            padding: 30px;
-        }
-
-        .whatsapp-btn {
-            background: #25D366;
-            color: white !important;
-            padding: 18px 45px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1.3em;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            width: 280px;
-            justify-content: center;
-        }
-
-        .website-btn {
-            background: #e74c3c;
-            color: white !important;
-            padding: 18px 45px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1.3em;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            width: 280px;
-            justify-content: center;
-        }
-
-        .buttons-container a:hover {
-            transform: translateY(-3px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            border-top: 1px solid #eee;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختر طريقة التواصل المفضلة</title>
+  <!-- استدعاء خط تاجوال من Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #25D366;
+      --secondary-color: #e74c3c;
+      --bg-overlay: rgba(0, 0, 0, 0.4);
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --text-color: #333;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    /* خلفية جذابة مع صورة ثابتة */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+      background: url('https://source.unsplash.com/1600x900/?abstract,technology') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    /* طبقة التظليل لإبراز المحتوى */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--bg-overlay);
+      z-index: 1;
+    }
+    /* الحاوية المركزية */
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    /* البطاقة التي تحتوي على المحتوى */
+    .card {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+      animation: slideIn 1s ease-out;
+    }
+    .card h2 {
+      margin-top: 0;
+      font-size: 2em;
+    }
+    .card p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    /* تصميم الأزرار */
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1.2em;
+      text-decoration: none;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      min-width: 200px;
+      flex: 1;
+      max-width: 280px;
+    }
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .whatsapp-btn {
+      background-color: var(--primary-color);
+    }
+    .website-btn {
+      background-color: var(--secondary-color);
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #ddd;
+      text-align: center;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* تحسين العرض على الأجهزة اللوحية والهواتف */
+    @media (max-width: 768px) {
+      .card {
+        padding: 30px 20px;
+      }
+      .card h2 {
+        font-size: 1.7em;
+      }
+      .card p {
+        font-size: 1em;
+      }
+      .button {
+        font-size: 1.1em;
+        padding: 12px 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      .card {
+        padding: 20px 15px;
+      }
+      .card h2 {
+        font-size: 1.5em;
+      }
+      .card p {
+        font-size: 0.95em;
+      }
+      .buttons-container {
+        flex-direction: column;
+      }
+      .button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <!-- النص القابل للتعديل -->
-    <div class="header-text" id="editableText">
-        <!-- يمكنك تعديل هذا النص مباشرة في الملف -->
-        <h2>باش نفهموا المشكل اللي عندك دخلي عندنا الوتساب باش تشرحي لنا مزيان</h2>
-        <p></p>
-    </div>
-
-    <!-- الأزرار -->
-    <div class="buttons-container">
-        <a href="#" class="whatsapp-btn" onclick="handleWhatsAppRedirect()">
-            <i class="fab fa-whatsapp"></i>
-            تواصل عبر واتساب
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="card">
+      <h2>نحن هنا لنستمع إليك ونفهم احتياجاتك</h2>
+      <p>تفضلي بالتواصل معنا عبر الواتساب لنقدم لكِ الدعم المناسب ونسعى لحل مشكلتك بأدق التفاصيل.</p>
+      <div class="buttons-container">
+        <a href="#" class="button whatsapp-btn" onclick="handleWhatsAppRedirect()">
+          <i class="fab fa-whatsapp"></i>
+          تواصل عبر واتساب
         </a>
-
-        <a href="https://www.taroumante.com" class="website-btn" target="_blank">
-            <i class="fas fa-store"></i>
-            زيارة المتجر
+        <a href="https://www.taroumante.com" class="button website-btn" target="_blank">
+          <i class="fas fa-store"></i>
+          زيارة المتجر
         </a>
+      </div>
     </div>
-
-    <!-- التذييل -->
     <footer>
-        © 2024 جميع الحقوق محفوظة
+      © 2024 جميع الحقوق محفوظة
     </footer>
+  </div>
 
-    <!-- نظام إدارة أرقام واتساب -->
-    <script>
-    // إعدادات القابلة للتخصيص
-    const AGENT_VERSION = "v3.0";
+  <script>
+    const AGENT_VERSION = "v3.1"; // تغيير النسخة عند تحديث الرقم
     const agents = [
-        { number: "212620342327", name: "الدعم الفني 1" },
-        { number: "212620342327", name: "الدعم المبيعات" },
-        { number: "212620342327", name: "دعم ما بعد البيع" },
-        { number: "212620342327", name: "دعم التوصيل" },
-        { number: "212620342327", name: "إدارة الشكاوى" },
-        { number: "212620342327", name: "الدعم الفني 2" }
+      { number: "212620342327", name: "الدعم الفني 1" },
+      { number: "212620342327", name: "الدعم المبيعات" },
+      { number: "212620342327", name: "دعم ما بعد البيع" },
+      { number: "212620342327", name: "دعم التوصيل" },
+      { number: "212620342327", name: "إدارة الشكاوى" },
+      { number: "212620342327", name: "الدعم الفني 2" }
     ];
 
     function handleWhatsAppRedirect() {
-        // تحديث نظام التخزين عند تغيير الإصدار
-        const storedData = localStorage.getItem('whatsappAgent');
-        let currentAgent = null;
+      const storedData = localStorage.getItem('whatsappAgent');
+      let currentAgent = null;
 
-        if (storedData) {
-            const data = JSON.parse(storedData);
-            if (data.version === AGENT_VERSION) {
-                currentAgent = data.agent;
-            }
+      if (storedData) {
+        const data = JSON.parse(storedData);
+        if (data.version === AGENT_VERSION) {
+          currentAgent = data.agent;
         }
+      }
 
-        if (!currentAgent) {
-            currentAgent = agents[Math.floor(Math.random() * agents.length)];
-            localStorage.setItem('whatsappAgent', JSON.stringify({
-                version: AGENT_VERSION,
-                agent: currentAgent
-            }));
-        }
+      if (!currentAgent) {
+        currentAgent = agents[Math.floor(Math.random() * agents.length)];
+        localStorage.setItem('whatsappAgent', JSON.stringify({
+          version: AGENT_VERSION,
+          agent: currentAgent
+        }));
+      }
 
-        // فتح المحادثة مباشرة بدون أي رسالة مسبقة
-        window.open(`https://wa.me/${currentAgent.number}`, '_blank');
+      const defaultMessage = encodeURIComponent("السلام عليكم، أحتاج مساعدتكم لحل مشكلتي بالتفصيل.");
+      window.open(`https://wa.me/${currentAgent.number}?text=${defaultMessage}`, '_blank');
     }
-</script>
+  </script>
+</body>
+</html>
