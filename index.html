@@ -4,9 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>اختر طريقة التواصل المفضلة</title>
-  <!-- استدعاء خط تاجوال من Google Fonts -->
+  
+  <!-- خطوط Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- أكواد التتبع -->
+  <!-- فيسبوك بكسل -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_FACEBOOK_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" 
+      src="https://www.facebook.com/tr?id=YOUR_FACEBOOK_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+
+  <!-- تيك توك بكسل -->
+  <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;
+      var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+      for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);
+      ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};
+        var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;
+        var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+        ttq.load('YOUR_TIKTOK_PIXEL_ID');
+        ttq.page();
+    }(window, document, 'ttq');
+  </script>
+
+  <!-- جوجل أناليتكس -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_GOOGLE_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YOUR_GOOGLE_ID');
+  </script>
+
+  <!-- سناب شات بكسل -->
+  <script type='text/javascript'>
+    (function(e,t,n,c){if(n in e&&e[n].length>0){var o,r=e[n],a=r.length,i=t.createElement('script');for(o=0;o<a;o++)if(r[o].getAttribute('data-eventsrc')==c){i.type='text/javascript';i.async=!0;i.src=r[o].getAttribute('src');t.getElementsByTagName('head')[0].appendChild(i);return}}})(window,document,'_scdn','snapchat');
+  </script>
+  <script class='snap-pixel' data-eventsrc='snapchat' src='https://sc-static.net/scevent.min.js' data-pixel-id='YOUR_SNAPCHAT_PIXEL_ID'></script>
+
   <style>
     :root {
       --primary-color: #25D366;
@@ -16,7 +66,7 @@
       --text-color: #333;
       --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
-    /* خلفية جذابة مع صورة ثابتة */
+
     body {
       margin: 0;
       padding: 0;
@@ -29,7 +79,7 @@
       justify-content: center;
       min-height: 100vh;
     }
-    /* طبقة التظليل لإبراز المحتوى */
+
     .overlay {
       position: fixed;
       top: 0;
@@ -39,7 +89,7 @@
       background: var(--bg-overlay);
       z-index: 1;
     }
-    /* الحاوية المركزية */
+
     .container {
       position: relative;
       z-index: 2;
@@ -49,7 +99,7 @@
       flex-direction: column;
       align-items: center;
     }
-    /* البطاقة التي تحتوي على المحتوى */
+
     .card {
       background: var(--card-bg);
       padding: 40px;
@@ -60,22 +110,25 @@
       width: 100%;
       animation: slideIn 1s ease-out;
     }
+
     .card h2 {
       margin-top: 0;
       font-size: 2em;
     }
+
     .card p {
       font-size: 1.1em;
       margin-bottom: 30px;
       line-height: 1.6;
     }
-    /* تصميم الأزرار */
+
     .buttons-container {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
     }
+
     .button {
       display: inline-flex;
       align-items: center;
@@ -91,27 +144,32 @@
       flex: 1;
       max-width: 280px;
     }
+
     .button:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 12px rgba(0,0,0,0.15);
     }
+
     .whatsapp-btn {
       background-color: var(--primary-color);
     }
+
     .website-btn {
       background-color: var(--secondary-color);
     }
+
     footer {
       margin-top: 30px;
       font-size: 0.9em;
       color: #ddd;
       text-align: center;
     }
+
     @keyframes slideIn {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    /* تحسين العرض على الأجهزة اللوحية والهواتف */
+
     @media (max-width: 768px) {
       .card {
         padding: 30px 20px;
@@ -127,6 +185,7 @@
         padding: 12px 20px;
       }
     }
+
     @media (max-width: 480px) {
       .card {
         padding: 20px 15px;
@@ -147,12 +206,14 @@
     }
   </style>
 </head>
+
 <body>
   <div class="overlay"></div>
   <div class="container">
     <div class="card">
       <h2>نحن هنا لنستمع إليك ونفهم احتياجاتك</h2>
       <p>تفضلي بالتواصل معنا عبر الواتساب لنقدم لكِ الدعم المناسب ونسعى لحل مشكلتك بأدق التفاصيل.</p>
+      
       <div class="buttons-container">
         <a href="#" class="button whatsapp-btn" onclick="handleWhatsAppRedirect()">
           <i class="fab fa-whatsapp"></i>
@@ -164,6 +225,7 @@
         </a>
       </div>
     </div>
+    
     <footer>
       © 2024 جميع الحقوق محفوظة
     </footer>
